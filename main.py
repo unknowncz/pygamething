@@ -132,8 +132,6 @@ class player():
                 g.worldoffset[1] = self.worldoffset[1]
             else:
                 self.pos[1] += math.sin(math.radians(self.angle)) * self.speed
-        else:
-            self.angle = 0
 
         if self.roadnum == len(g.gameobjects):
             print('you win')
