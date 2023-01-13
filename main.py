@@ -170,10 +170,12 @@ if __name__ == "__main__":
     # event handlers - turn left, turn right
     def left_key():
         global g
-        g.gameobjects[-1].angle = (g.gameobjects[-1].angle - 1 + 360) % 360
+        if g.gameobjects[-1].speed > 0:
+            g.gameobjects[-1].angle = (g.gameobjects[-1].angle - 1 + 360) % 360
     def right_key():
         global g
-        g.gameobjects[-1].angle = (g.gameobjects[-1].angle + 1 + 360) % 360
+        if g.gameobjects[-1].speed > 0:
+            g.gameobjects[-1].angle = (g.gameobjects[-1].angle + 1 + 360) % 360
     def space_key():
         global g
         g.gameobjects[-1].started = True
